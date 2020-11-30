@@ -7,7 +7,7 @@ testReleasedYamlDoesNotIncludeDefaultProcWhenProcfileIsPresent() {
   expectedReleaseYAML=`cat <<EOF
 ---
 config_vars:
-  JAVA_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
+  JAVA_OPTS: -Xmx300m -Xss512k -XX:CICompilerCount=2
   PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
   cloudinary
@@ -23,7 +23,7 @@ testReleasedYamlHasDefaultProcessType() {
   expectedReleaseYAML=`cat <<EOF
 ---
 config_vars:
-  JAVA_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
+  JAVA_OPTS: -Xmx300m -Xss512k -XX:CICompilerCount=2
   PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
   cloudinary
