@@ -10,7 +10,9 @@ config_vars:
   JAVA_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
   PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
-  heroku-postgresql
+  cloudinary
+  newrelicapm
+  sendgrid
 EOF`
 
   release
@@ -24,7 +26,9 @@ config_vars:
   JAVA_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops
   PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
-  heroku-postgresql
+  cloudinary
+  newrelicapm
+  sendgrid
 default_process_types:
   web:    play run --http.port=\\$PORT \\$PLAY_OPTS
 EOF`
