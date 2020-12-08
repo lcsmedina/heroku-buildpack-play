@@ -11,7 +11,7 @@ config_vars:
   PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
   - cloudinary
-  - newrelicapm
+  - newrelic
   - sendgrid
 EOF`
 
@@ -27,7 +27,7 @@ config_vars:
   PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
   - cloudinary
-  - newrelicapm
+  - newrelic
   - sendgrid
 default_process_types:
   web:    play run --http.port=\\$PORT \\$PLAY_OPTS

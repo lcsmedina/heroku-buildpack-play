@@ -10,7 +10,7 @@ config_vars:
   PLAY_OPTS: --%prod -Dprecompiled=true
 addons:
   cloudinary
-  newrelicapm
+  newrelic
   sendgrid
 EOF
 
