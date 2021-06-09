@@ -38,7 +38,8 @@ download_play_official() {
   local playVersion=${1}
   local playTarFile=${2}
   local playZipFile="play-${playVersion}.zip"
-  local playUrl="https://downloads.typesafe.com/play/${playVersion}/${playZipFile}"
+  #local playUrl="https://downloads.typesafe.com/play/${playVersion}/${playZipFile}"
+  local playUrl="https://github.com/playframework/play1/releases/download/${playVersion}/${playZipFile}"
 
   status=$(curl --retry 3 --silent --head -w %{http_code} -L ${playUrl} -o /dev/null)
   if [ "$status" != "200" ]; then
@@ -104,10 +105,11 @@ https://devcenter.heroku.com/articles/scala-support"
 install_play()
 {
   VER_TO_INSTALL=$1
-  #PLAY_URL="https://s3.amazonaws.com/heroku-jvm-langpack-play/play-heroku-$VER_TO_INSTALL.tar.gz"
-  #PLAY_TAR_FILE="play-heroku.tar.gz"
-  PLAY_URL="https://continentebim-prod.s3.amazonaws.com/play-$VER_TO_INSTALL.tar.gz"
-  PLAY_TAR_FILE="play-$VER_TO_INSTALL.tar.gz"
+  PLAY_URL="https://s3.amazonaws.com/heroku-jvm-langpack-play/play-heroku-$VER_TO_INSTALL.tar.gz"
+  PLAY_TAR_FILE="play-heroku.tar.gz"
+  
+  #PLAY_URL="https://continentebim-prod.s3.amazonaws.com/play-$VER_TO_INSTALL.tar.gz"
+  #PLAY_TAR_FILE="play-$VER_TO_INSTALL.tar.gz"
 
   validate_play_version ${VER_TO_INSTALL}
 
