@@ -104,8 +104,10 @@ https://devcenter.heroku.com/articles/scala-support"
 install_play()
 {
   VER_TO_INSTALL=$1
-  PLAY_URL="https://s3.amazonaws.com/heroku-jvm-langpack-play/play-heroku-$VER_TO_INSTALL.tar.gz"
-  PLAY_TAR_FILE="play-heroku.tar.gz"
+  #PLAY_URL="https://s3.amazonaws.com/heroku-jvm-langpack-play/play-heroku-$VER_TO_INSTALL.tar.gz"
+  #PLAY_TAR_FILE="play-heroku.tar.gz"
+  PLAY_URL="https://continentebim-prod.s3.amazonaws.com/play-$VER_TO_INSTALL.tar.gz"
+  PLAY_TAR_FILE="play-$VER_TO_INSTALL.tar.gz"
 
   validate_play_version ${VER_TO_INSTALL}
 
@@ -127,6 +129,10 @@ install_play()
 Please review Dev Center for a list of supported versions."
     exit 1
   fi
+
+  echo $PWD
+  echo $(ls)
+
   tar xzmf $PLAY_TAR_FILE
   rm $PLAY_TAR_FILE
   chmod +x $PLAY_PATH/play
